@@ -1,8 +1,0 @@
-/Users/dedmons/Developer/cbor++/build/test/CMakeFiles/cbor++-unittests.dir
-/Users/dedmons/Developer/cbor++/build/test/CMakeFiles/check.dir
-/Users/dedmons/Developer/cbor++/build/CMakeFiles/docs.dir
-/Users/dedmons/Developer/cbor++/build/CMakeFiles/documentation.dir
-/Users/dedmons/Developer/cbor++/build/CMakeFiles/doxygen.dir
-/Users/dedmons/Developer/cbor++/build/src/CMakeFiles/sharedlib.dir
-/Users/dedmons/Developer/cbor++/build/src/CMakeFiles/staticlib.dir
-/Users/dedmons/Developer/cbor++/build/test/CMakeFiles/unittest.dir

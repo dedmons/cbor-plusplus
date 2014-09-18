@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../lib/libcbor++.a  CMakeFiles/staticlib.dir/version.cpp.o
-/usr/bin/ranlib ../../lib/libcbor++.a
