@@ -1,0 +1,3 @@
+- [ ] Convert AUTHORS to markdown
+- [ ] Fix copyright in each file
+- [ ] Add code format config
