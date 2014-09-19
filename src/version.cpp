@@ -1,17 +1,17 @@
-#include <projectname/version.h>
+#include <cbor++/version.h>
 #include "libraryinfo.h"
 
 EXTERNC int projectname_version_major()
-{ 
-    return APPLICATION_VERSION_MAJOR; 
+{
+    return LIBRARY_VERSION_MAJOR;
 }
 
 EXTERNC int projectname_version_minor()
 {
-    return APPLICATION_VERSION_MINOR;
+    return LIBRARY_VERSION_MINOR;
 }
 
 EXTERNC int projectname_version_patch()
 {
-    return APPLICATION_VERSION_PATCH;
+    return LIBRARY_VERSION_PATCH;
 }
