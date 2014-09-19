@@ -1,14 +1,3 @@
-### Manual Entries ###
-# Build dir
-build/*
-
-# Build output dirs
-bin/*
-lib/*
-
-# Keep the .keep files
-!**/.keep
-
 #####################################
 # Created by https://www.gitignore.io
 
@@ -73,3 +62,17 @@ CMakeFiles
 Makefile
 cmake_install.cmake
 install_manifest.txt
+
+### Manual Entries ###
+# Build dir
+/build/*
+
+# Build output dirs
+/bin/*
+/lib/*
+
+# Keep the .keep files
+!**/.keep
+
+# Keep static libs in thirdparty folder
+!/thirdparty/lib/*.a
