@@ -7,7 +7,7 @@
 
 find_path(GTEST_INCLUDE_DIR gtest/gtest.h)
 
-find_library(GTEST_LIBRARY NAMES libgtest.a libgtest_main.a)
+find_library(GTEST_LIBRARY NAMES libgtest.a)
 
 set(GTEST_LIBRARIES ${GTEST_LIBRARY} )
 set(GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIR} )
