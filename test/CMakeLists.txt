@@ -1,6 +1,6 @@
 FILE (GLOB_RECURSE test_SRCS *.cpp *.cxx *.cc *.C *.c *.h *.hpp)
-SET (test_LIBS ${PROJECT_NAME})
-SET (test_BIN ${PROJECT_NAME}-unittests)
+SET (test_LIBS ${PROJECT_NAME} ${GTEST_LIBRARIES})
+SET (test_BIN ${PROJECT_NAME}_unittests)
 
 IF (NOT CMAKE_CROSSCOMPILING)
     LINK_DIRECTORIES(${MAINFOLDER}/lib)

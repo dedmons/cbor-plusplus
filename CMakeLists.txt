@@ -23,6 +23,13 @@ SET (LIBRARY_ID "${LIBRARY_VENDOR_ID}.${PROJECT_NAME}")
 #
 SET (CMAKE_VERBOSE_MAKEFILE 0) # Use 1 for debugging, 0 for release
 
+
+#
+# Compiler Flags
+#
+SET (CMAKE_C_FLAGS "-Wall -pedantic")
+SET (CMAKE_CXX_FLAGS "-Wall -pedantic -std=c++1y")
+
 #
 # Project Output Paths
 #
@@ -36,6 +43,13 @@ SET (LIBRARY_OUTPUT_PATH "${MAINFOLDER}/lib")
 LIST (APPEND CMAKE_PREFIX_PATH "${MAINFOLDER}")
 LIST (APPEND CMAKE_PREFIX_PATH "${MAINFOLDER}/thirdparty")
 INCLUDE_DIRECTORIES("${MAINFOLDER}/include")
+
+
+#
+# Include Libraries
+#
+FIND_PACKAGE(GTest REQUIRED)
+INCLUDE_DIRECTORIES(${GTEST_INCLUDE_DIRS})
 
 #
 # Configure Files

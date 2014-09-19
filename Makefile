@@ -21,16 +21,6 @@ distclean:
 	@- $(RM) ./build/cmake.*
 	@- $(RM) ./build/*.cmake
 	@- $(RM) ./build/*.txt
-	@- $(RM) ./docs/*.html
-	@- $(RM) ./docs/*.css
-	@- $(RM) ./docs/*.png
-	@- $(RM) ./docs/*.jpg
-	@- $(RM) ./docs/*.gif
-	@- $(RM) ./docs/*.tiff
-	@- $(RM) ./docs/*.php
-	@- $(RM) ./docs/search
-	@- $(RM) ./docs/installdox
-
 
 ifeq ($(findstring distclean,$(MAKECMDGOALS)),)
 
