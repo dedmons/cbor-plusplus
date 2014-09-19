@@ -1,4 +1,5 @@
-#include <unittest++/UnitTest++.h>
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
 /*
  * This file provides a transitive include for the UnitTest++ library

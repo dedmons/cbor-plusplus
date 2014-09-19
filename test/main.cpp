@@ -9,5 +9,7 @@
 
 int main(int argc, char* argv[])
 {
-    return UnitTest::RunAllTests();
+  ::testing::InitGoogleTest(&argc, argv);
+
+  return RUN_ALL_TESTS();
 }
