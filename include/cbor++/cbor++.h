@@ -3,6 +3,8 @@
 #define HEADER_CBORPLUSPLUS_CBORPLUSPLUS_H_INCLUDED
 
 #include <cbor++/version.h>
-#include <cbor++/CBORPlusPlusDecoder.h>
+#include <cbor++/CBORDecoder.h>
+
+#include <cbor++/CBORValue.h>
 
 #endif
