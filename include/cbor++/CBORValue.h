@@ -1,3 +1,4 @@
+// Copyright (c) 2014 Douglas Edmonson Jr. All rights reserved.
 #ifndef CBOR_VALUE__H
 #define CBOR_VALUE__H
 

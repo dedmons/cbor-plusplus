@@ -1,3 +1,4 @@
+// Copyright (c) 2014 Douglas Edmonson Jr. All rights reserved.
 #include "test.h"
 
 #include <cbor++/cbor++.h>

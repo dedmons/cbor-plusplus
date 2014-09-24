@@ -1,4 +1,6 @@
 /*
+ * Copyright (c) 2014 Douglas Edmonson Jr. All rights reserved.
+ *
  * This is an example unit test that doesn't really do anything useful.
  * It is here as a reference for you when creating additional unit tests.
  * For additional reference information, see the "test.h" header.

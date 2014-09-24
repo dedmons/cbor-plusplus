@@ -1,4 +1,4 @@
-// <Douglas Edmonson Jr>. Copyright (C) 2014. MIT.
+// Copyright (c) 2014 Douglas Edmonson Jr. All rights reserved.
 #ifndef HEADER_SRC_LIBINFO_H_INCLUDED
 #define HEADER_SRC_LIBINFO_H_INCLUDED
 
