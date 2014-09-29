@@ -2,12 +2,12 @@
 #ifndef CBOR_VALUE__H
 #define CBOR_VALUE__H
 
-#include <stdint.h>
-#include <stdlib.h>
+#include <cstdint>
+#include <cstdlib>
 
-#include <string.h>
-#include <vector.h>
-#include <map.h>
+#include <string>
+#include <vector>
+#include <map>
 
 enum CBORType {
   CBORType_PInt,
@@ -16,20 +16,20 @@ enum CBORType {
   CBORType_UString,
   CBORType_Array,
   CBORType_Map,
-}
+};
 
-typedef std::vector<CBORValue> CBORArray
-typedef std::map<CBORValue,CBORValue> CBORMap
+class CBORValue;
+
+typedef std::vector<CBORValue> CBORArray;
+typedef std::map<CBORValue,CBORValue> CBORMap;
 
 class CBORValue {
   public:
-    CBORValue(const uint8_t * bytes);
+    CBORValue(const std::uint8_t * bytes);
 
-    CBORValue(const uint64_t tag, const uint64_t pInt);
-    CBORValue(const uint64_t tag, const int64_t nInt);
-    CBORValue(const uint64_t tag, const char * bStr);
-    CBORValue(const uint64_t tag, const std::string * uStr);
-    CBORValue(const uint64_t tag, const CBORArray * arr);
+    CBORValue(const std::uint64_t tag, const std::uint64_t intVal, const bool isNeg);
+    CBORValue(const std::uint64_t tag, const std::string * str, const bool isUTF8);
+    CBORValue(const std::uint64_t tag, const CBORArray * arr);
     CBORValue(const uint64_t tag, const CBORMap * map);
 
     bool isType(CBORType type) const;
@@ -42,15 +42,21 @@ class CBORValue {
 
     const uint8_t * getBytes() const;
 
-    uint64_t getPosInteger() const;
-    int64_t getNegInteger() const;
-    const char * getByteString() const;
+    uint64_t          getPosInteger() const;
+    int64_t           getNegInteger() const;
+    const std::string getByteString() const;
     const std::string getUTF8String() const;
-    const CBORArray getAarray() const;
-    const CBORMap getMap() const;
+    const CBORArray   getAarray() const;
+    const CBORMap     getMap() const;
 
   private:
-    CBORType type;
+    CBORType    type;
+
+    bool        isNegative;
+    uint64_t    integerValue;
+    std::string stringValue;
+    CBORArray   arrayValue;
+    CBORMap     mapValue;
 };
 
 #endif /* CBOR_VALUE__H */
