@@ -71,7 +71,19 @@ CBORValue::CBORValue(const std::uint8_t * bytes)
       integerValue = getInteger(data, count);
     }
     break;
-  case CBORType_BString:
+  case CBORType_BString: {
+    type = CBORType_BString;
+    size_t strSize = ai;
+    const std::uint8_t * data = bytes;
+    if (strSize > 23 && strSize != 31) {
+      data = data + sizeof(std::uint8_t);
+      std::uint8_t count = pow(2,ai-24);
+      strSize = getInteger(data, count);
+      data = data + (sizeof(std::uint8_t)*count);
+    }
+    stringValue = std::string((const char *)data, strSize);
+    break;
+  }
   case CBORType_UString:
   case CBORType_Array:
   case CBORType_Map:
@@ -100,6 +112,11 @@ bool CBORValue::isNegInteger() const
   return isType(CBORType_NInt);
 }
 
+bool CBORValue::isByteString() const
+{
+  return isType(CBORType_BString);
+}
+
 /*************************
  *
  * Value Accessors
@@ -113,4 +130,9 @@ std::uint64_t CBORValue::getPosInteger() const
 std::int64_t CBORValue::getNegInteger() const
 {
   return -1 - integerValue;
+}
+
+const std::string CBORValue::getByteString() const
+{
+  return stringValue;
 }
