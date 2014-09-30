@@ -32,7 +32,7 @@ void bytesWithInitByteAndData(std::uint8_t ib, std::uint64_t data, std::uint8_t 
   memcpy(bytes+sizeof(ib), &data, sizeof(data));
 }
 
-TEST(CBORInteger, create_positive_int)
+TEST(CBOR_Integer, Decode_Positive_Int)
 {
   std::uint8_t * bytes = (std::uint8_t *)malloc(sizeof(std::uint8_t)+sizeof(std::uint64_t));
 
@@ -83,7 +83,7 @@ TEST(CBORInteger, create_positive_int)
   free(bytes);
 }
 
-TEST(CBORDecoder, decode_negative_int)
+TEST(CBOR_Integer, Decode_Negative_Int)
 {
   std::uint8_t * bytes = (std::uint8_t *)malloc(sizeof(std::uint8_t)+sizeof(std::uint64_t));
 
