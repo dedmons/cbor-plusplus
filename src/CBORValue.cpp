@@ -5,14 +5,14 @@
 #include "util.h"
 
 union uint_conv_u{
-  uint8_t  byte[8];
-  uint8_t  i8;
-  uint16_t i16;
-  uint32_t i32;
-  uint64_t i64;
+  std::uint8_t  byte[8];
+  std::uint8_t  i8;
+  std::uint16_t i16;
+  std::uint32_t i32;
+  std::uint64_t i64;
 } uint_conv;
 
-uint64_t getInteger(const uint8_t * bytes, uint8_t count)
+std::uint64_t getInteger(const std::uint8_t * bytes, std::uint8_t count)
 {
   for(int i = 0; i < count; i++){
     //printf("Setting byte %d to 0x%02x\n", i, bytes[i]);
@@ -41,12 +41,12 @@ uint64_t getInteger(const uint8_t * bytes, uint8_t count)
  * Constructors
  *
  *************************/
-CBORValue::CBORValue(const uint8_t * bytes)
+CBORValue::CBORValue(const std::uint8_t * bytes)
 {
-  uint8_t typeByte = *bytes;
+  std::uint8_t typeByte = *bytes;
 
-  uint8_t mt = getMajorType(typeByte);
-  uint8_t ai = getAdditionalInfo(typeByte);
+  std::uint8_t mt = getMajorType(typeByte);
+  std::uint8_t ai = getAdditionalInfo(typeByte);
 
   switch(mt) {
   case CBORType_PInt:
@@ -55,8 +55,8 @@ CBORValue::CBORValue(const uint8_t * bytes)
     if(ai <= 23) {
       integerValue = ai;
     } else {
-      const uint8_t * data = bytes + sizeof(uint8_t);
-      uint8_t count = pow(2,ai-24);
+      const std::uint8_t * data = bytes + sizeof(std::uint8_t);
+      std::uint8_t count = pow(2,ai-24);
       integerValue = getInteger(data, count);
     }
     break;
@@ -66,8 +66,8 @@ CBORValue::CBORValue(const uint8_t * bytes)
     if(ai <= 23) {
       integerValue = ai;
     } else {
-      const uint8_t * data = bytes + sizeof(uint8_t);
-      uint8_t count = pow(2,ai-24);
+      const std::uint8_t * data = bytes + sizeof(std::uint8_t);
+      std::uint8_t count = pow(2,ai-24);
       integerValue = getInteger(data, count);
     }
     break;
@@ -105,12 +105,12 @@ bool CBORValue::isNegInteger() const
  * Value Accessors
  *
  *************************/
-uint64_t CBORValue::getPosInteger() const
+std::uint64_t CBORValue::getPosInteger() const
 {
   return integerValue;
 }
 
-int64_t CBORValue::getNegInteger() const
+std::int64_t CBORValue::getNegInteger() const
 {
   return -1 - integerValue;
 }
